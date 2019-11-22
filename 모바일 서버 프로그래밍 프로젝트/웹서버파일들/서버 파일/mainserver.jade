@@ -1,0 +1,78 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='Mark Otto, Jacob Thornton, and Bootstrap contributors')
+    meta(name='generator', content='Jekyll v3.8.5')
+    title 서버 메인 페이지
+    link(rel='canonical', href='https://getbootstrap.com/docs/4.3/examples/blog/')
+    // Bootstrap core CSS
+    link(href='main/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    style.
+      .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      }
+      @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+      }
+      }
+    // Custom styles for this template
+    link(href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900', rel='stylesheet')
+    // Custom styles for this template
+    link(href='dist/css/bootstrap.min.css', rel='stylesheet')
+  body
+    .container
+      header.blog-header.py-3
+        .row.flex-nowrap.justify-content-between.align-items-center
+          .col-4.pt-1
+          .col-4.text-center
+            h2.blog-header-logo.text-dark(href='#') 서버 메인 페이지
+          .col-4.d-flex.justify-content-end.align-items-center
+
+      .nav-scroller.py-1.mb-2
+        nav.nav.d-flex.justify-content-between
+
+      .jumbotron.p-4.p-md-5.text-white.rounded.bg-dark
+        .col-md-6.px-0
+          h1.display-4.font-italic 학식 주문 서비스
+          p.lead.my-3
+            | 주문을 먼저 하고 학식을 빠르게 받으세요!!!
+          p.lead.mb-0
+            a.text-white.font-weight-bold(href='http://www.gachon.ac.kr/etc/food.jsp') 지원하는 곳
+      .row.mb-2
+        .col-md-6
+          .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+            .col.p-4.d-flex.flex-column.position-static
+              strong.d-inline-block.mb-2.text-primary 학식업체의 역할
+              h3.mb-0 주문을 관리할 수 있습니다.
+              .mb-1.text-muted 메뉴별 매출액을 확인해보세요.
+              p.card-text.mb-auto
+                | 매일 메뉴와 수량을 업데이트 해주세요!
+              a.stretched-link(href='http://#{ip}:65008/user/logIn/sellerid') 로그인 페이지로 가기
+            .col-auto.d-none.d-lg-block
+              svg.bd-placeholder-img(width='200', height='250', xmlns='http://www.w3.org/2000/svg', preserveAspectRatio='xMidYMid slice', focusable='false', role='img', aria-label='Placeholder: Thumbnail')
+                title 학식 업체 메인
+                rect(width='100%', height='100%', fill='#55595c')
+                text(x='50%', y='50%', fill='#eceeef', dy='.3em') 학식업체
+        .col-md-6
+          .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+            .col.p-4.d-flex.flex-column.position-static
+              strong.d-inline-block.mb-2.text-success 관리자 페이지
+              h3.mb-0 주문, 메뉴 DB 관리
+              .mb-1.text-muted 데이터 베이스 모니터링
+              p.mb-auto
+                | DB 현황 확인과 삭제하기
+              a.stretched-link(href='http://#{ip}:65008/admin/logIn/adminid') 로그인 페이지로 가기
+            .col-auto.d-none.d-lg-block
+              svg.bd-placeholder-img(width='200', height='250', xmlns='http://www.w3.org/2000/svg', preserveAspectRatio='xMidYMid slice', focusable='false', role='img', aria-label='Placeholder: Thumbnail')
+                title 관리자 메인
+                rect(width='100%', height='100%', fill='#55595c')
+                text(x='50%', y='50%', fill='#eceeef', dy='.3em') 관리자 메뉴

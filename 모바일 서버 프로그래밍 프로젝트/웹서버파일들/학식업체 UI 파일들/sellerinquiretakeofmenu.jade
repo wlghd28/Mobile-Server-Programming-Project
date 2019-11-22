@@ -1,0 +1,148 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='Mark Otto, Jacob Thornton, and Bootstrap contributors')
+    meta(name='generator', content='Jekyll v3.8.5')
+    title 메뉴별 매출수량 조회
+    link(rel='canonical', href='https://getbootstrap.com/docs/4.3/examples/dashboard/')
+    // Bootstrap core CSS
+    link(href='dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    style.
+    style.
+      #container {
+      width: 70%;
+      margin: 0 auto;     /* 가로로 중앙에 배치 */
+      padding-top: 10%;   /* 테두리와 내용 사이의 패딩 여백 */
+      }
+      #list {
+      text-align: center;
+      }
+      #write {
+      text-align: right;
+      }
+      /* Bootstrap 수정 */
+      .table > thead {
+      background-color: #b3c6ff;
+      }
+      .table > thead > tr > th {
+      text-align: center;
+      }
+      .table-hover > tbody > tr:hover {
+      background-color: #e6ecff;
+      }
+      .table > tbody > tr > td {
+      text-align: center;
+      }
+      .table > tbody > tr > #title {
+      text-align: left;
+      }
+      div > #paging {
+      text-align: center;
+      }
+      .hit {
+      animation-name: blink;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      /* 위 속성들을 한 줄로 표기하기 */
+      /* -webkit-animation: blink 1.5s ease infinite; */
+      }
+      /* 애니메이션 지점 설정하기 */
+      /* 익스플로러 10 이상, 최신 모던 브라우저에서 지원 */
+      @keyframes blink {
+      from {color: white;}
+      30% {color: yellow;}
+      to {color: red; font-weight: bold;}
+      /* 0% {color:white;}
+      30% {color: yellow;}
+      100% {color:red; font-weight: bold;} */
+      }
+      .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      }
+      @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+      }
+      }
+      .text-center{
+      margin: 0 auto;
+      width:300px;
+      }
+    // Custom styles for this template
+    link(href='dashboard.css', rel='stylesheet')
+    style(type='text/css').
+      /* Chart.js */
+      @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}
+  body(style='background-color: gainsboro')
+    nav.nav.d-flex.justify-content-between(style='background-color: khaki')
+      a.p-2.text-muted(style=' font-size:1.5em ; background-color:goldenrod', href='http://#{ip}:65008/seller/main') 학식업체
+      a           
+      a.p-2.text-muted(style=' font-size:1.2em', href='http://#{ip}:65008/menu/manage_page') 학식 메뉴정보 관리
+      a.p-2.text-muted(style=' font-size:1.2em', href='http://#{ip}:65008/order/data_page/1') 매출수량 조회
+      a.p-2.text-muted(style=' font-size:1.2em', href='http://#{ip}:65008/order/search/userid') 학식 결제 인증
+      a           
+      a.p-2.text-muted(style='font-size:1.2em', href='http://#{ip}:65008') 로그아웃
+    link(type='text/css', rel='stylesheet', charset='UTF-8', href='https://translate.googleapis.com/translate_static/css/translateelement.css')
+    .text-center
+    center
+      #container
+        div(align='right')
+        // Login 검증
+        // jstl의 if문은 else가 없어서 따로 검증해야함.
+        #list
+        h3 메뉴별 매출수량 조회
+        div
+          c:foreach(var='article', items='${articles}', varstatus='status')
+          table.table.table-striped.table-bordered.table-hover(width='900px')
+            thead
+              tr
+                th 메뉴이름
+                th 매출수량
+                th 매출액
+            tbody
+            - for(var i=(page*page_num) - page_num; i<page*page_num; i++){
+                  - if(i+1 == leng){
+                    - break;
+                  - }else{
+                      - var item = data[i+1];
+                          tr
+                            td #{item.Menu_Main}
+                            td #{item.sales_volume}
+                            td #{item.sales_volume * item.Price}
+                  - }
+            - }
+              //- data.forEach((item,index)=>{
+                - if(index == data.length){
+                    - break;
+                - }
+                - else if(index >= (page*page_num) - page_num && index < page*page_num){
+                    tr
+                      td #{item.Menu_Main}
+                      td #{item.sales_volume}
+                      td #{item.sales_volume * item.Price}
+                - }
+              //- });
+              tr
+                td(colspan='3')
+                  - for(var i=0;i<data.length/10;i++){
+                      a(href='http://#{ip}:65008/order/data_page/#{i+1}') [#{i+1}]
+                  - }
+    
+    br
+    br
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script.
+      window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\\/script>')
+    script(src='/docs/4.3/dist/js/bootstrap.bundle.min.js', integrity='sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js')
+    script(src='dashboard.js')

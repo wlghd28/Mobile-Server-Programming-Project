@@ -1,0 +1,86 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='Mark Otto, Jacob Thornton, and Bootstrap contributors')
+    meta(name='generator', content='Jekyll v3.8.5')
+    title 학식업체 메인 홈
+    link(rel='canonical', href='https://getbootstrap.com/docs/4.3/examples/blog/')
+    // Bootstrap core CSS
+    link(href='main/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    style.
+      .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      }
+      @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+      }
+      }
+    // Custom styles for this template
+    link(href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900', rel='stylesheet')
+    // Custom styles for this template
+    link(href='dist/css/bootstrap.min.css', rel='stylesheet')
+  body
+    .container
+      header.blog-header.py-3
+        .row.flex-nowrap.justify-content-between.align-items-center
+          .col-4.pt-1
+          .col-4.text-center
+            h3.blog-header-logo.text-dark(href='#') 학식업체 메인 홈
+          .col-4.d-flex.justify-content-end.align-items-center
+            a.btn.btn-sm.btn-outline-secondary(href='http://#{ip}:65008') 로그아웃
+            a  
+            a.btn.btn-sm.btn-outline-secondary(href='http://#{ip}:65008/seller/resetPW') 비밀번호 변경
+            a  
+            a.btn.btn-sm.btn-outline-secondary(href='http://#{ip}:65008/seller/request/secession') 회원탈퇴
+      .nav-scroller.py-1.mb-2
+        nav.nav.d-flex.justify-content-between
+          a           
+          a.p-2.text-muted(href='http://#{ip}:65008/menu/manage_page') 학식 메뉴정보 관리
+          a.p-2.text-muted(href='http://#{ip}:65008/order/data_page/1') 메뉴별 매출수량 조회
+          a.p-2.text-muted(href='http://#{ip}:65008/order/search/userid') 학식 결제 인증
+          a           
+      .jumbotron.p-4.p-md-5.text-white.rounded.bg-dark
+        .col-md-6.px-0
+          h1.display-4.font-italic 학식업체의 역할
+          p.lead.my-3
+            | 메뉴 등록, 메뉴 관리, 사용자의 결제인증
+          p.lead.mb-0
+            a.text-white.font-weight-bold(href='http://#{ip}:65008/') 서버 메인으로 돌아가기...
+      .row.mb-2
+        .col-md-6
+          .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+            .col.p-4.d-flex.flex-column.position-static
+              strong.d-inline-block.mb-2.text-primary 가천대 비타학식
+              h3.mb-0 Cafeteria
+              .mb-1.text-muted 비전타워 지하1층
+              p.card-text.mb-auto
+                | 경기도 수정구 성남대로 1342
+              a.stretched-link(href='http://gachon.ac.kr/main.jsp') 홈페이지로...
+            .col-auto.d-none.d-lg-block
+              svg.bd-placeholder-img(width='200', height='250', xmlns='http://www.w3.org/2000/svg', preserveAspectRatio='xMidYMid slice', focusable='false', role='img', aria-label='Placeholder: Thumbnail')
+                title 저희 서비스를 사용해주셔서 감사합니다...
+                rect(width='100%', height='100%', fill='#55595c')
+                text(x='50%', y='50%', fill='#eceeef', dy='.3em') 업체 1
+        .col-md-6
+          .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+            .col.p-4.d-flex.flex-column.position-static
+              strong.d-inline-block.mb-2.text-success 미지원
+              h3.mb-0 학식업체 명
+              .mb-1.text-muted 위치
+              p.mb-auto
+                | 주소
+              a.stretched-link(href='http://#{ip}:65008/') 메인 링크
+            .col-auto.d-none.d-lg-block
+              svg.bd-placeholder-img(width='200', height='250', xmlns='http://www.w3.org/2000/svg', preserveAspectRatio='xMidYMid slice', focusable='false', role='img', aria-label='Placeholder: Thumbnail')
+                title 즐거운 하루 되세요...
+                rect(width='100%', height='100%', fill='#55595c')
+                text(x='50%', y='50%', fill='#eceeef', dy='.3em') Thumbnail

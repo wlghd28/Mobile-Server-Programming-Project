@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+            <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:text="오늘의 메뉴 상세조회"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+                android:id="@+id/detail_menu_picture"
+                android:layout_width="match_parent"
+                android:layout_height="282dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"/>
+
+        <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:layout_below="@+id/detail_menu_picture"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="1dp">
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:text="메뉴이름  :"
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/textView"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:gravity="center"/>
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_toRightOf="@id/textView"
+                        android:layout_alignParentTop="true"
+                        android:id="@+id/detail_menu_name"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/relativeLayout1">
+                <TextView
+                        android:text="원산지  :"
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/textView3"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textAlignment="center"
+                        android:gravity="center"/>
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_toRightOf="@id/textView3"
+                        android:id="@+id/detail_menu_origin"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/relativeLayout2">
+                <TextView
+                        android:text="가격  :"
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/textView5"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:gravity="center"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_toRightOf="@+id/textView5"
+                        android:id="@+id/detail_menu_price"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+            </RelativeLayout>
+
+            <Button
+                    android:text="결제하기"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_selector_pressed"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/payment"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@id/relativeLayout3"
+                    android:textSize="20sp"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
+                    android:textAlignment="center"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

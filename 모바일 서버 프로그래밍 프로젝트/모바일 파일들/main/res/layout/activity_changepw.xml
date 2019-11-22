@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.MainActivity">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="false"
+    >
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:background="@color/colorPrimary">
+
+                <ImageView
+                        android:layout_width="50dp"
+                        app:srcCompat="@drawable/img_modifypw"
+                        android:tint="@color/white"
+                        android:background="@drawable/circle"
+                        android:padding="8dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="비밀번호 변경"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"/>
+            </LinearLayout>
+
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/linearLayout1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-10dp"
+                    android:rotation="45"
+                    app:srcCompat="@drawable/square"/>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@+id/linearLayout1">
+
+                <ImageView
+                        android:id="@+id/imageView_userIcon"
+                        android:background="@color/colorPrimary"
+                        app:srcCompat="@drawable/img_user"
+                        android:tint="@color/white"
+                        android:padding="5dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+
+                <EditText
+                        android:id="@+id/editText_currentid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imageView_userIcon"
+                        android:hint="아이디"
+                        android:paddingLeft="20dp"
+                        android:textSize="15sp"
+                        android:layout_alignParentTop="true"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
+                        android:layout_alignBottom="@+id/imageView_userIcon"
+                        android:background="@color/editTextBG"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/relativeLayout1">
+
+                <ImageView
+                        android:id="@+id/imageView_currentpw"
+                        android:background="@color/colorPrimary"
+                        app:srcCompat="@drawable/img_passwd"
+                        android:tint="@color/white"
+                        android:padding="6dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+
+                <EditText
+                        android:id="@+id/editText_currentpw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imageView_currentpw"
+                        android:hint="현재 비밀번호 확인"
+                        android:inputType="textPassword"
+                        android:paddingLeft="20dp"
+                        android:textSize="15sp"
+                        android:layout_alignParentTop="true"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
+                        android:layout_alignBottom="@+id/imageView_currentpw"
+                        android:background="@color/editTextBG"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/relativeLayout2">
+
+                <ImageView
+                        android:id="@+id/imageView_numberIcon"
+                        android:background="@color/colorPrimary"
+                        app:srcCompat="@drawable/img_newpw"
+                        android:tint="@color/white"
+                        android:padding="5dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+
+                <EditText
+                        android:id="@+id/editText_newpw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imageView_numberIcon"
+                        android:hint="새 비밀번호"
+                        android:inputType="textPassword"
+                        android:paddingLeft="20dp"
+                        android:textSize="15sp"
+                        android:layout_alignParentTop="true"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
+                        android:layout_alignBottom="@+id/imageView_numberIcon"
+                        android:background="@color/editTextBG"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/relativeLayout3">
+
+                <ImageView
+                        android:id="@+id/imageView_checknewpw"
+                        android:background="@color/colorPrimary"
+                        app:srcCompat="@drawable/img_checkpw"
+                        android:tint="@color/white"
+                        android:padding="4dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+
+                <EditText
+                        android:id="@+id/editText_checkpw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imageView_checknewpw"
+                        android:hint="새 비밀번호 확인"
+                        android:inputType="textPassword"
+                        android:paddingLeft="20dp"
+                        android:textSize="15sp"
+                        android:layout_alignParentTop="true"
+                        android:singleLine="true"
+                        android:imeOptions="actionDone"
+                        android:layout_alignBottom="@+id/imageView_checknewpw"
+                        android:background="@color/editTextBG"/>
+
+            </RelativeLayout>
+
+
+
+            <Button
+                    android:id="@+id/button_changepw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_selector_pressed"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="비밀번호 변경"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/relativeLayout4"/>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

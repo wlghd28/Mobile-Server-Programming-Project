@@ -1,0 +1,59 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='Mark Otto, Jacob Thornton, and Bootstrap contributors')
+    meta(name='generator', content='Jekyll v3.8.5')
+    title 학식업체 회원탈퇴
+    link(rel='canonical', href='https://getbootstrap.com/docs/4.3/examples/sign-in/')
+    // Bootstrap core CSS
+    link(href='dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    style.
+      .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      }
+      @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+      }
+      }
+      .text-center{
+      position: absolute;
+      padding: 20px;
+      width: 300px;
+      background-color: #EEEFF1;
+      border-radius: 5px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      }
+    // Custom styles for this template
+    link(href='dist/css/signin.css', rel='stylesheet')
+    link(type='text/css', rel='stylesheet', charset='UTF-8', href='https://translate.googleapis.com/translate_static/css/translateelement.css')
+  body.text-center
+    form.form-signin(method='POST', action='/seller/secession/userid?_method=DELETE')
+      img.mb-4(src='site/docs/4.3/assets/brand/bootstrap-solid.svg', alt='', width='72', height='72')
+      h1.h3.mb-3.font-weight-normal 회원탈퇴 페이지
+      span(style='float:left') ID
+      label.sr-only(for='inputId') Id
+      input#inputId.form-control(type='text', name='sellerid', placeholder='Id', required='', autofocus='')
+      span(style='float:left') PASSWORD
+      label.sr-only(for='inputPassword') Password
+      input#inputPassword.form-control(type='password', name='sellerpassword', placeholder='Password', required='')
+      span(style='float:left') BUSINESS NUMBER
+      label.sr-only(for='inputBusinessNumber') Business Number
+      input#inputBusinessNumber.form-control(type='number', name='sellerbusinessnumber', placeholder='BusinessNumber', required='')
+      .checkbox.mb-3
+      button.btn.btn-lg.btn-primary.btn-block(type='submit') 회원탈퇴
+      button.btn.btn-lg.btn-primary.btn-block(type='button', onclick="location.href= 'http://#{ip}:65008/seller/main' ") 뒤로가기
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')

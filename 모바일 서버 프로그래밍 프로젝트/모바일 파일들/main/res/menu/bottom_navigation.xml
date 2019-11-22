@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="오늘의 메뉴"
+          android:icon="@drawable/ic_restaurant_black"
+          android:id="@+id/nav_order"/>
+
+    <item android:title="전체 메뉴 조회"
+          android:icon="@drawable/ic_list_black"
+          android:id="@+id/nav_food_list"/>
+
+
+    <item android:title="주문 내역 조회"
+          android:icon="@drawable/ic_paylist_black"
+          android:id="@+id/nav_pay_list"/>
+
+    <item android:title="환경설정"
+          android:icon="@drawable/ic_user_black"
+          android:id="@+id/nav_option"/>
+
+</menu>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="60dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeLayout1">
+
+            <TextView
+                    android:id="@+id/All_Menu_Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:gravity="center"
+                    android:text="학식 메뉴 리스트"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="25dp"/>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:layout_below="@id/relativeLayout1"
+            android:id="@+id/RecyclerView_InquireAllMenuList"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

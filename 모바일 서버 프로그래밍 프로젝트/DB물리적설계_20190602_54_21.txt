@@ -1,0 +1,138 @@
+﻿-- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
+
+-- USER Table Create SQL
+CREATE TABLE USER
+(
+    `UserID`      VARCHAR(20)    NOT NULL, 
+    `PW`          VARCHAR(20)    NOT NULL, 
+    `Name`        VARCHAR(20)    NOT NULL, 
+    `User_Num`    INT            NOT NULL, 
+    `User_State`  INT            NOT NULL, 
+    PRIMARY KEY (UserID)
+);
+
+
+-- Menu_All_List Table Create SQL
+CREATE TABLE Menu_All_List
+(
+    `Menu_Num`   INT             NOT NULL    AUTO_INCREMENT, 
+    `Menu_Main`  VARCHAR(20)     NOT NULL, 
+    `Price`      INT             NOT NULL, 
+    `Origin`     VARCHAR(100)    NOT NULL, 
+    PRIMARY KEY (Menu_Num)
+);
+
+
+-- ACCOUNT Table Create SQL
+CREATE TABLE ACCOUNT
+(
+    `Account_Num`  VARCHAR(45)    NOT NULL, 
+    `Account_PW`   INT            NOT NULL, 
+    `Owner`        VARCHAR(20)    NOT NULL, 
+    `Money`        INT            NOT NULL, 
+    `UserID`       VARCHAR(20)    NOT NULL, 
+    PRIMARY KEY (Account_Num)
+);
+
+
+-- ORDER_LIST Table Create SQL
+CREATE TABLE ORDER_LIST
+(
+    `Order_Num`    INT            NOT NULL    AUTO_INCREMENT, 
+    `Menu_Name`    VARCHAR(20)    NOT NULL, 
+    `Price`        INT            NOT NULL, 
+    `Date`         CHAR(10)       NOT NULL, 
+    `Order_State`  INT            NOT NULL, 
+    `UserID`       VARCHAR(20)    NOT NULL, 
+    `Account_Num`  VARCHAR(45)    NOT NULL, 
+    PRIMARY KEY (Order_Num)
+);
+
+ALTER TABLE ORDER_LIST
+    ADD CONSTRAINT FK_ORDER_LIST_Account_Num_ACCOUNT_Account_Num FOREIGN KEY (Account_Num)
+        REFERENCES ACCOUNT (Account_Num) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE ORDER_LIST
+    ADD CONSTRAINT FK_ORDER_LIST_UserID_USER_UserID FOREIGN KEY (UserID)
+        REFERENCES USER (UserID) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+-- REVIEW Table Create SQL
+CREATE TABLE REVIEW
+(
+    `UserID`      VARCHAR(20)    NOT NULL, 
+    `Date`        CHAR(10)       NOT NULL, 
+    `Menu`        INT            NOT NULL, 
+    `reviewText`  TEXT           NOT NULL, 
+    `score`       INT            NULL
+);
+
+ALTER TABLE REVIEW
+    ADD CONSTRAINT FK_REVIEW_UserID_USER_UserID FOREIGN KEY (UserID)
+        REFERENCES USER (UserID) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE REVIEW
+    ADD CONSTRAINT FK_REVIEW_Menu_Menu_All_List_Menu_Num FOREIGN KEY (Menu)
+        REFERENCES Menu_All_List (Menu_Num) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+-- Menu_Info Table Create SQL
+CREATE TABLE Menu_Info
+(
+    `Menu_Date`         CHAR(10)        NOT NULL, 
+    `Flame_Menu`        VARCHAR(45)     NOT NULL, 
+    `Course1_Menu`      VARCHAR(45)     NOT NULL, 
+    `Course2_Menu`     VARCHAR(45)     NOT NULL, 
+    `Special_Menu`      VARCHAR(45)     NOT NULL, 
+    `Flame_Origin`      VARCHAR(100)    NOT NULL, 
+    `Course1_Origin`    VARCHAR(100)    NOT NULL, 
+    `Course2_Origin`    VARCHAR(100)    NOT NULL, 
+    `Special_Origin`    VARCHAR(100)    NOT NULL, 
+    `Flame_Price`       INT             NOT NULL, 
+    `Course1_Price`     INT             NOT NULL, 
+    `Course2_Price`     INT             NOT NULL, 
+    `Special_Price`     INT             NOT NULL, 
+    `Flame_Quantity`    INT             NOT NULL, 
+    `Course1_Quantity`  INT             NOT NULL, 
+    `Course2_Quantity`  INT             NOT NULL, 
+    `Special_Quantity`  INT             NOT NULL, 
+    PRIMARY KEY (Menu_Date)
+);
+
+
+-- Seller Table Create SQL
+CREATE TABLE Seller
+(
+    `SellerID`         VARCHAR(20)    NOT NULL, 
+    `PW`               VARCHAR(20)    NOT NULL, 
+    `Seller_Num`       INT            NOT NULL, 
+    `Approve_State`    INT            NOT NULL, 
+    `Secession_State`  INT            NOT NULL, 
+    PRIMARY KEY (SellerID)
+);
+
+
+-- Sales Table Create SQL
+CREATE TABLE Sales
+(
+    `Menu_Num`      INT            NOT NULL    AUTO_INCREMENT, 
+    `Menu_Name`     VARCHAR(20)    NOT NULL, 
+    `sales_volume`  INT            NOT NULL, 
+    PRIMARY KEY (Menu_Num)
+);
+
+ALTER TABLE Sales
+    ADD CONSTRAINT FK_Sales_Menu_Num_Menu_All_List_Menu_Num FOREIGN KEY (Menu_Num)
+        REFERENCES Menu_All_List (Menu_Num) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+-- Admin Table Create SQL
+CREATE TABLE Admin
+(
+    `AdminID`  VARCHAR(20)    NOT NULL, 
+    `PW`       VARCHAR(20)    NOT NULL, 
+    `Key`      VARCHAR(20)    NOT NULL, 
+    PRIMARY KEY (AdminID)
+);
+
+
